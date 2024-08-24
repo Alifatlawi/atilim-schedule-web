@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ScheduleForm from './components/ScheduleForm';
+import WeeklySchedule from './components/WeeklySchedule';
 
-function App() {
+const App = () => {
+  const [schedules, setSchedules] = useState([]);
+
+  const handleScheduleGenerated = (generatedSchedules) => {
+    setSchedules(generatedSchedules);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ScheduleForm onGenerateSchedule={handleScheduleGenerated} />} />
+        <Route path="/schedule" element={<WeeklySchedule schedules={schedules} />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

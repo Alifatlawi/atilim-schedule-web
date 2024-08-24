@@ -1,0 +1,50 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .schedule-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-form-title {
+    color: #007bff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .schedule-form-group {
+    margin-bottom: 20px;
+  }
+  
+  .schedule-form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .schedule-form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .schedule-form-button:hover {
+    background-color: #0056b3;
+  }
+  
