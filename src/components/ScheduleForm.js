@@ -13,7 +13,7 @@ const ScheduleForm = ({ onGenerateSchedule }) => {
 
   // Fetch departments
   useEffect(() => {
-    axios.get('http://localhost:4000/public/departments')
+    axios.get('https://schedule.atilim.edu.tr/public/departments')
       .then(response => setDepartments(response.data))
       .catch(error => console.error('Error fetching departments:', error));
   }, []);
@@ -21,7 +21,7 @@ const ScheduleForm = ({ onGenerateSchedule }) => {
   // Fetch courses when department is selected
   useEffect(() => {
     if (selectedDepartment) {
-      axios.get('http://localhost:4000/public/courses')
+      axios.get('https://schedule.atilim.edu.tr/public/courses')
         .then(response => setCourses(response.data))
         .catch(error => console.error('Error fetching courses:', error));
     }
@@ -33,7 +33,7 @@ const ScheduleForm = ({ onGenerateSchedule }) => {
       department: selectedDepartment.value
     };
 
-    axios.post('http://localhost:4000/schedule/generateSchedule', payload)
+    axios.post('https://schedule.atilim.edu.tr/schedule/generateSchedule', payload)
       .then(response => {
         console.log('Generated schedule:', response.data);
         onGenerateSchedule(response.data);
