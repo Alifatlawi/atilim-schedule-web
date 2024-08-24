@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import { useNavigate } from 'react-router-dom';
-import './ScheduleForm.css'; // Add a separate CSS file for styling
+import './ScheduleForm.css'; // Import the CSS file
 
 const ScheduleForm = ({ onGenerateSchedule }) => {
   const [departments, setDepartments] = useState([]);
@@ -54,7 +54,7 @@ const ScheduleForm = ({ onGenerateSchedule }) => {
 
   return (
     <div className="schedule-form-container">
-      <h1 className="schedule-form-title">Schedule Generator</h1>
+      <h1 className="schedule-form-title">Schedule Generator <br /> By Ali Al-Fatlawi <br /> For Atilim University</h1>
       <div className="schedule-form-group">
         <label className="schedule-form-label">Select Department:</label>
         <Select
