@@ -16,9 +16,17 @@ const courseColors = [
 ];
 
 const getCourseColorClass = (courseId) => {
-  const index = courseId.charCodeAt(0) % courseColors.length; 
+  // Create a hash from the full courseId string
+  let hash = 0;
+  for (let i = 0; i < courseId.length; i++) {
+    hash = courseId.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  // Ensure the hash is within the range of the courseColors array
+  const index = Math.abs(hash) % courseColors.length;
   return courseColors[index];
 };
+
 
 const timeToMinutes = (time) => {
   const [hours, minutes] = time.split(':').map(Number);

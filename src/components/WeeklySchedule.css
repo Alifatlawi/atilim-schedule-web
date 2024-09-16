@@ -89,15 +89,24 @@ th {
   font-size: 14px;
 }
 
+/* Course color classes */
+.course-color-1 { background-color: #ffcccc; } /* Light red */
+.course-color-2 { background-color: #ccffcc; } /* Light green */
+.course-color-3 { background-color: #ccccff; } /* Light blue */
+.course-color-4 { background-color: #ffffcc; } /* Light yellow */
+.course-color-5 { background-color: #ffccff; } /* Light pink */
+.course-color-6 { background-color: #ccffff; } /* Light cyan */
+.course-color-7 { background-color: #ffcc99; } /* Light orange */
+.course-color-8 { background-color: #d9ccff; } /* Light purple */
+
 .schedule-item {
-  background-color: #e0f7fa;
   border-radius: 8px;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
 
 .schedule-item:hover {
-  background-color: #b2ebf2;
+  filter: brightness(1.2);
 }
 
 .schedule-item .schedule-details {
