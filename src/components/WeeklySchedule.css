@@ -1,106 +1,139 @@
+/* WeeklySchedule.css */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+}
+
 .weekly-schedule {
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.schedule-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.schedule-navigation button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.schedule-navigation button:disabled {
+  background-color: #6c757d;
+}
+
+.schedule-navigation button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.export-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.export-buttons button {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.export-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+th, td {
+  padding: 16px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.schedule-item {
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-item:hover {
+  background-color: #b2ebf2;
+}
+
+.schedule-item .schedule-details {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.empty-cell {
+  background-color: #f9f9f9;
+}
+
+.loading-spinner {
+  text-align: center;
+  font-size: 18px;
+  color: #007bff;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .weekly-schedule {
     padding: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .schedule-navigation, .export-buttons {
     flex-direction: column;
-    align-items: center; /* Center the table */
-  }
-  
-  .weekly-schedule table {
-    width: 100%;
-    border-collapse: collapse;
-    overflow-x: auto;
-  }
-  
-  .weekly-schedule th, .weekly-schedule td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    vertical-align: top;
-    font-size: 0.8em;
-  }
-  
-  .weekly-schedule th {
-    background-color: #007bff;
-    color: white;
-    text-transform: uppercase;
-  }
-  
-  .schedule-item {
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .schedule-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .course-color-1 { background-color: #ffcccc; }
-  .course-color-2 { background-color: #cce5ff; }
-  .course-color-3 { background-color: #d4edda; }
-  .course-color-4 { background-color: #fff3cd; }
-  .course-color-5 { background-color: #f8d7da; }
-  .course-color-6 { background-color: #d1ecf1; }
-  .course-color-7 { background-color: #c3e6cb; }
-  .course-color-8 { background-color: #ffeeba; }
-  
-  .schedule-navigation {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+  }
+
+  .schedule-navigation button, .export-buttons button {
     margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
   }
-  
-  .schedule-navigation button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .schedule-navigation button:hover {
-    background-color: #0056b3;
-  }
-  
-  .schedule-navigation span {
-    font-weight: bold;
-    font-size: 1em;
-  }
-  
-  /* Mobile-specific styles */
-  @media (max-width: 600px) {
-    .weekly-schedule th, .weekly-schedule td {
-      padding: 5px;
-      font-size: 0.7em;
-    }
-  
-    .weekly-schedule {
-      padding: 5px;
-    }
-  
-    .schedule-navigation {
-      flex-direction: column;
-      gap: 5px;
-    }
-  
-    .schedule-navigation button {
-      padding: 5px 10px;
-      font-size: 0.9em;
-    }
-  
-    .schedule-navigation span {
-      font-size: 0.9em;
-    }
-  }
-  
+}
